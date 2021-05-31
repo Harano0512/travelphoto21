@@ -1,14 +1,9 @@
-
-<div>
-  <%= form_with(model: @content, local: true) do |f| %>
-    <%= f.label :title,"タイトル" %>
-    <%= f.text_field :title %></br>
-    <%= f.label :from_date,"出発日"%>
-    <%= f.date_field :from_date %></br>
-    <%= f.label :return_date,"帰着日"%>
-    <%= f.date_field :return_date %></br>
-    <%= f.submit "作成" %>
-  <% end %>
-</div>
-
-<%= link_to "戻る",contents_path %>
+<%= form_with(model: @content, local: true) do |f| %>
+  <%= f.label :title,"タイトル" %>
+  <%= f.text_field :title %></br>
+  <%= f.label :from_date,"出発日"%>
+  <%= f.date_field :from_date %></br>
+  <%= f.label :return_date,"帰着日"%>
+  <%= f.date_field :return_date %></br>
+  <%= f.submit "作成" %>
+<% end %>

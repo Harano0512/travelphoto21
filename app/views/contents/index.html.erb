@@ -1,11 +1,1 @@
 <h1>TravelPhoto21</h1>
-
-<div>
-<% @contents.each do |content| %>
-  <%= link_to content.title, content_path(content.id) %></br>
-  <%= content.from_date %> ~ <%= content.return_date %></br>
-  <%= content.user.nickname%></br>
-<% end %>
-</div>
-</br>
-<%= link_to "新しい旅を投稿する",new_content_path %>

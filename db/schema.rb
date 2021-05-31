@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2021_05_31_072507) do
 
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.date "dep_date", null: false
-    t.date "arv_date", null: false
+    t.date "from_date", null: false
+    t.date "return_date", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

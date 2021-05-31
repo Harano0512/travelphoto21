@@ -12,8 +12,7 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
     if @content.save
-      redirect_to new_content_path(@content.id)
-      redirect_to contents_path
+      redirect_to content_path(@content.id)
     else
       render :new
     end

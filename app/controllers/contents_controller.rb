@@ -19,10 +19,35 @@ class ContentsController < ApplicationController
     end
   end
 
+  def show
+    @content = Content.find(params[:id])
+  end 
+
+  def destroy
+    @content = Content.find(params[:id])
+    @content.destroy
+    redirect_to root_path
+  end
+
+  def edit
+    @content = Content.find(params[:id])
+  end
+
+  def update
+    @content = Content.find(params[:id])
+    if @content.update(content_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+    
+  
   private
   
   def content_params
-    params.require(:content).permit(:title, :from_date, :return_date, :image).merge(user_id: current_user.id)
+    params.require(:content).permit(:title, :from_date, :return_date).merge(user_id: current_user.id)
   end
 
 end

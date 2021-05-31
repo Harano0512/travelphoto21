@@ -2,7 +2,7 @@
 
 <div>
 <% @contents.each do |content| %>
-  <%= content.title %></br>
+  <%= link_to content.title, content_path(content.id) %></br>
   <%= content.from_date %> ~ <%= content.return_date %></br>
   <%= content.user.nickname%></br>
 <% end %>

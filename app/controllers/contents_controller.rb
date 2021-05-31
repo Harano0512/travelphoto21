@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   before_action :authenticate_user!, expect: [:index]
 
   def index
-   @contents = Content.order("created_at DESC")
+    @contents = Content.order('created_at DESC')
   end
 
   def new
@@ -21,7 +21,7 @@ class ContentsController < ApplicationController
 
   def show
     @content = Content.find(params[:id])
-  end 
+  end
 
   def destroy
     @content = Content.find(params[:id])
@@ -42,12 +42,9 @@ class ContentsController < ApplicationController
     end
   end
 
-    
-  
   private
-  
+
   def content_params
     params.require(:content).permit(:title, :from_date, :return_date).merge(user_id: current_user.id)
   end
-
 end

@@ -1,5 +1,4 @@
 class Content < ApplicationRecord
-
   with_options presence: true do
     validates :title
     validates :from_date

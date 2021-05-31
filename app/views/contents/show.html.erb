@@ -1,7 +1,0 @@
-<h3><%= @content.title %></h3>
-<%= @content.from_date %> ~ <%= @content.return_date %></br>
-<%= @content.user.nickname%></br>
-
-<%= link_to "編集する", edit_content_path(@content.id) %>
-<%= link_to "削除する", content_path(@content.id), method: :delete %>
-<%= link_to "戻る",contents_path %>

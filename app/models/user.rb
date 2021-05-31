@@ -9,5 +9,6 @@ class User < ApplicationRecord
     validates :prefecture_id
   end
 
+  has_many :contents
 
 end

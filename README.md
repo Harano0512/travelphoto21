@@ -20,8 +20,8 @@ has_many :comments
 | Column             | Type      | Options           |
 |--------------------|-----------|-------------------|
 | title              | string    | null: false       |
-| dep_date           | date      | null: false       |
-| arv_date           | date      | null: false       |
+| from_date          | date      | null: false       |
+| return_date        | date      | null: false       |
 | user_id            | references| foreign_key: true |
 
 ### association

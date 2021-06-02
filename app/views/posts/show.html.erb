@@ -1,0 +1,12 @@
+<%= @post.subject %>
+<%= @post.travel_date %>
+<%= @post.prefecture_id %>
+<%= @post.article %>
+
+<% @post.images.each do |image| %>
+  <%= image_tag image.variant(resize: '400x400') %>
+<% end %>
+
+<%= link_to "編集", edit_content_post_path(@post.content_id, @post.id) %>
+<%= link_to "削除", content_post_path(@post.id), method: :delete%>
+<%= link_to "一覧へ", content_path(@post.content_id) %>

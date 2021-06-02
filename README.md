@@ -33,6 +33,7 @@ has_many :posts
 
 | Column             | Type      | Options           |
 |--------------------|-----------|-------------------|
+| subject            | string    | null: false       |
 | travel_date        | date      | null: false       |
 | prefecture_id      | integer   | null: false       |
 | article            | text      | null: false       |

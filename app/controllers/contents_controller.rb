@@ -20,6 +20,7 @@ class ContentsController < ApplicationController
 
   def show
     @content = Content.find(params[:id])
+    @posts = Post.where(content_id: @content.id).order('travel_date')
   end
 
   def destroy

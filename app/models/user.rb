@@ -6,9 +6,12 @@ class User < ApplicationRecord
   
   with_options presence: true do
     validates :nickname
-    validates :prefecture_id
+    validates :prefecture_id, numericality:{other_than: 1}
   end
 
-  has_many :contents
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture
+
+  has_many :contents, dependent: :destroy
 
 end

@@ -1,6 +1,16 @@
 <h3><%= @content.title %></h3>
 <%= @content.from_date %> ~ <%= @content.return_date %></br>
+
+<% @posts.each do |post| %>
+  <div>
+    <%= link_to post.travel_date, content_post_path(post.content_id,post.id) %>
+    <%= post.subject %>
+  </div>
+<% end %>
+
+<%= link_to "新しいアルバムを作成する", new_content_post_path(content_id: @content.id) %>
 <%= @content.user.nickname%></br>
+
 
 <%= link_to "編集する", edit_content_path(@content.id) %>
 <%= link_to "削除する", content_path(@content.id), method: :delete %>

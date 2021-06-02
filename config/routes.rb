@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'contents#index'
   devise_for :users
-  resources :contents
-  resources :posts
+  resources :contents do
+    resources :posts, only: [:show, :new, :create, :destroy, :edit, :update]
+  end
 end

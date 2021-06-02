@@ -4,7 +4,7 @@
   <%= f.label :travel_date, "日付" %>
   <%= f.date_field :travel_date, autocomplete: "travel_date" %>
   <%= f.label :prefecture_id, "都道府県" %>
-  <%= f.text_field :prefecture_id, autocomplete: "prefecture_id" %>
+  <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name) %>
   <%= f.label :article, "テキスト" %>
   <%= f.text_field :article, autocomplete: "article" %>
   <%= f.label :image, "画像を選択" %>

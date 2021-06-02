@@ -2,6 +2,7 @@
 <%= @post.travel_date %>
 <%= @post.prefecture_id %>
 <%= @post.article %>
+
 <% @post.images.each do |image| %>
   <%= image_tag image.variant(resize: '400x400') %>
 <% end %>

@@ -2,7 +2,7 @@
 <%= @post.travel_date %>
 <%= @post.prefecture_id %>
 <%= @post.article %>
-<%= image_tag @post.image %>
+<%= image_tag @post.image.variant(resize: '400x400') %>
 
 <%= link_to "編集", edit_content_post_path(@post.content_id, @post.id) %>
 <%= link_to "削除", content_post_path(@post.id), method: :delete%>

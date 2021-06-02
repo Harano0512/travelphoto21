@@ -9,4 +9,20 @@
 
 <%= link_to "編集", edit_content_post_path(@post.content_id, @post.id) %>
 <%= link_to "削除", content_post_path(@post.id), method: :delete%>
-<%= link_to "一覧へ", content_path(@post.content_id) %>
+<%= link_to "一覧へ", content_path(@post.content_id) %></br> 
+
+コメント
+<div>
+  <%= form_with(model: @comment, url: comments_path, local: true) do |f| %>
+   <%= f.text_field :text %>
+   <%= f.hidden_field :post_id, :value => @post.id %>
+   <%= f.submit "コメントする" %>
+  <% end %>
+</div>
+
+<% @comments.each do |comment| %>
+  <div>
+    <%= comment.text %>
+    <%= comment.user.nickname %>
+  </div>
+<% end %>

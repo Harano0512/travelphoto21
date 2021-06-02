@@ -53,11 +53,11 @@ has_many_attached :images
 |--------------------|-----------|-------------------|
 | text               | text      | null: false       |
 | user_id            | references| foreign_key: true |
-| content_id         | references| foreign_key: true |
+| post_id            | references| foreign_key: true |
 
 ### association
 belongs_to :user
-belongs_to :content
+belongs_to :post
 
 
 #### prefecture_idはactive hashにて実装

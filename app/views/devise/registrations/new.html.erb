@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= f.label :prefecture_id %><br />
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name) %>
+    <%= f.text_field :prefecture_id, autofocus: true, autocomplete: "prefecture_id" %>
   </div>
   
   <div class="field">

@@ -1,0 +1,9 @@
+<%= @post.subject %>
+<%= @post.travel_date %>
+<%= @post.prefecture_id %>
+<%= @post.article %>
+<%= image_tag @post.image %>
+
+
+<%= link_to "削除", content_post_path(@post.id), method: :delete%>
+<%= link_to "一覧へ", content_path(@post.content_id) %>

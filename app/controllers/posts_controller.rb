@@ -2,12 +2,10 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-    @comments = Comment.order("created_at DESC")
   end
 
   def new
     @post = Post.new
-    @comment = Comment.new
   end
 
   def create

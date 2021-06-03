@@ -8,10 +8,13 @@
   </div>
 <% end %>
 
-<%= link_to "新しいアルバムを作成する", new_content_post_path(content_id: @content.id) %>
-<%= @content.user.nickname%></br>
+<% if user_signed_in? && current_user.id == @content.user_id %>
+  <%= link_to "新しいアルバムを作成する", new_content_post_path(content_id: @content.id) %>
+  <%= @content.user.nickname%></br>
 
 
-<%= link_to "編集する", edit_content_path(@content.id) %>
-<%= link_to "削除する", content_path(@content.id), method: :delete %>
+  <%= link_to "編集する", edit_content_path(@content.id) %>
+  <%= link_to "削除する", content_path(@content.id), method: :delete %>
+<% end %>
+
 <%= link_to "戻る",contents_path %>

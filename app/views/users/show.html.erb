@@ -1,0 +1,13 @@
+<h1> マイページ </h1>
+<%= @user.nickname %>
+<%= @user.prefecture.name%>
+
+<%= link_to 'アカウント情報を編集する', edit_user_registration_path(@user.id) if current_user.id == @user.id %>
+
+<% if @posts.present? %>
+  <% @posts.images.each do |image| %>
+    <%= image_tag image.variant(resize: '400x400') %>
+  <% end %>
+<% else %>
+  保存されている写真はありません
+<% end %>

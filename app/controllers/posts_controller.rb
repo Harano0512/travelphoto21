@@ -47,8 +47,8 @@ class PostsController < ApplicationController
   end
 
   def check_user
-    post = Post.find(params[:id])
-    unless current_user.id == post.user_id
+    content = Content.find(params[:content_id])
+    unless current_user.id == content.user_id
       redirect_to content_post_path(post.content_id,post.id)
     end
   end

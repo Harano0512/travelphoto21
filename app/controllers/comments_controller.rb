@@ -5,6 +5,13 @@ class CommentsController < ApplicationController
     comment = Comment.create(comment_params)
     redirect_to "/contents/#{post.content.id}/posts/#{post.id}"
   end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    post = Post.find("#{comment.post_id}")
+    comment.destroy
+    redirect_to "/contents/#{post.content.id}/posts/#{post.id}"
+  end
   
   
   private

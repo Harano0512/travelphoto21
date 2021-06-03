@@ -25,5 +25,6 @@
     <%= l comment.created_at %>
     <%= comment.text %>
     <%= comment.user.nickname %>
+    <%= link_to "削除する", comment_path(comment.id), method: :delete %>
   </div>
 <% end %>

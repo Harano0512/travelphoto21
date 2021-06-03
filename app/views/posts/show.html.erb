@@ -22,6 +22,7 @@
 
 <% @comments.each do |comment| %>
   <div>
+    <%= l comment.created_at %>
     <%= comment.text %>
     <%= comment.user.nickname %>
   </div>

@@ -1,0 +1,210 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+/* リセットCSSここまで */
+
+body {
+  width: 100vw;
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+body * li{
+  list-style: none;
+}
+
+body * a {
+  text-decoration: none;
+} 
+
+/* header */
+header {
+  width: 100vw;
+  height: 70px;
+  background-color: #ffffff;
+  background-size: cover;
+  border-bottom: solid 2px gainsboro;
+}
+
+.header-bar {
+  padding: 10px 30px;
+}
+
+.header-bar img {
+  float: left;
+}
+
+.header-bar input{
+  width: 200px;
+  display: inline-block;
+  float: left;
+  margin-left: 100px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+
+.sign-btn {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  background-color: rgba(229, 171, 228, 0.729);
+  margin: 2px 10px;
+  float: right;
+  color: #ffffff;
+  border-radius: 15px;
+  font-size: 20px;
+  padding: 8px 0 2px;
+  text-align: center;
+  box-shadow: 3px 3px rgb(83, 83, 83);
+}
+
+.sign-btn:hover {
+  background-color: rgba(229, 171, 228, 1);
+}
+
+.sign-btn:active {
+  position: relative;
+  top: 3px;
+  right: 3px;
+  box-shadow: none;
+}
+
+
+/* index-menu-bar */
+.index-menu-bar {
+  width: 100vw;
+  height: 40px;
+  background-color: rgba(253, 224, 95, 0.6);
+}
+
+.index-menu {
+  padding: 9px;
+}
+
+.index-menu ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+.index-menu a{
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+.index-menu a:hover{
+  border-bottom: solid 3px #ffffff;
+}
+
+/* index-main */
+.index-main-wrapper {
+  background-image: url(images/4677820_m.jpg);
+  background-size: cover;
+  height: 600px;
+  width: 100vw;
+}
+
+.index-main-container {
+  width: 800px;
+  height: 300px;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.index-main-container h1 {
+  color: darkblue;
+  font-size: 80px;
+}
+
+.index-main-container h2 {
+  color: darkblue;
+  font-size: 30px;
+}
+
+.index-main-container a {
+  display: inline-block;
+  font-size: 14px;
+  padding-top: 8px;
+  width: 250px;
+  height: 30px;
+  background-color: rgba(29, 173, 154, 0.7);
+  color: #ffffff;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 3px 3px rgb(83, 83, 83);
+}
+
+.index-main-container a:hover {
+  background-color: rgba(29, 173, 154, 1);
+  cursor: pointer;
+}
+
+.index-main-container a:active {
+  position: relative;
+  top: 3px;
+  right: 3px;
+  box-shadow: none;
+}
+
+/* index-bottom */
+
+.index-bottom-wrapper {
+  width: 100vw;
+}
+
+.index-bottom {
+  width: 800px;
+  margin: 60px auto;
+  
+}
+
+#new-articles-list {
+  font-size: 30px;
+  color: black;
+  border-bottom:solid 1px black;
+}
+
+.article-list {
+  width: 730px;
+  height: 200px;
+  background-color: rgb(234, 234, 229);
+  margin: 20px;
+  padding: 20px;
+  display: flex; 
+  justify-content: space-between;
+}
+
+.new-article p {
+  font-size: 16px;
+}
+
+/*footer*/
+footer{
+  width: 100vw;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.629);
+}
+
+.footer-container {
+  padding: 15px;
+}
+
+.footer-container p{
+  color: white;
+  font-size: 16px;
+}

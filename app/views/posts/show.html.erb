@@ -5,7 +5,9 @@
 <%= link_to @post.user.nickname, user_path(@post.user_id)%></br>
 
 <% @post.images.each do |image| %>
-  <%= image_tag image.variant(resize: '400x400') %>
+  <%= link_to image, "data-lightbox": image do %>
+    <%= image_tag image.variant(resize: '400x400') %>
+  <% end %>
 <% end %>
 
 <% if user_signed_in? && current_user.id == @post.user_id %>
@@ -27,7 +29,7 @@
   <div>
     <%= l comment.created_at %>
     <%= comment.text %>
-    <%= comment.user.nickname %>
-    <%= link_to "削除する", comment_path(comment.id), method: :delete if user_signed_in? && current_user.id == comment.user_id %>
+    <%= link_to comment.user.nickname, user_path(comment.user_id)%>
+    <%= link_to "コメント削除", comment_path(comment.id), method: :delete if user_signed_in? && current_user.id == comment.user_id %>
   </div>
 <% end %>

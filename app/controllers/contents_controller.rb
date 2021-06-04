@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_content, [:check_user, :show, :destroy, :edit, :update]
+  before_action :set_content, only: [:check_user, :show, :destroy, :edit, :update]
   before_action :check_user, only: [:edit, :destroy, :update]
 
   def index

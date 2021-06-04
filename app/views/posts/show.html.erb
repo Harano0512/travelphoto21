@@ -2,6 +2,7 @@
 <%= @post.travel_date %>
 <%= @post.prefecture_id %>
 <%= @post.article %>
+<%= link_to @post.user.nickname, user_path(@post.user_id)%></br>
 
 <% @post.images.each do |image| %>
   <%= image_tag image.variant(resize: '400x400') %>

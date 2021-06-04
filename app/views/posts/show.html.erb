@@ -2,13 +2,16 @@
 <%= @post.travel_date %>
 <%= @post.prefecture_id %>
 <%= @post.article %>
+<%= link_to @post.user.nickname, user_path(@post.user_id)%></br>
 
 <% @post.images.each do |image| %>
   <%= image_tag image.variant(resize: '400x400') %>
 <% end %>
 
-<%= link_to "編集", edit_content_post_path(@post.content_id, @post.id) %>
-<%= link_to "削除", content_post_path(@post.id), method: :delete%>
+<% if user_signed_in? && current_user.id == @post.user_id %>
+  <%= link_to "編集", edit_content_post_path(@post.content_id, @post.id) %>
+  <%= link_to "削除", content_post_path(@post.id), method: :delete%>
+<% end %>
 <%= link_to "一覧へ", content_path(@post.content_id) %></br> 
 
 コメント
@@ -25,6 +28,6 @@
     <%= l comment.created_at %>
     <%= comment.text %>
     <%= comment.user.nickname %>
-    <%= link_to "削除する", comment_path(comment.id), method: :delete %>
+    <%= link_to "削除する", comment_path(comment.id), method: :delete if user_signed_in? && current_user.id == comment.user_id %>
   </div>
 <% end %>

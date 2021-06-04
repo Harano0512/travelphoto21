@@ -1,5 +1,7 @@
 class ContentsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, only: [:edit, :destroy, :update]
+
   def index
    @contents = Content.order('created_at DESC')
   end
@@ -44,6 +46,13 @@ class ContentsController < ApplicationController
   private
   def content_params
     params.require(:content).permit(:title, :from_date, :return_date).merge(user_id: current_user.id)
+  end
+
+  def check_user
+    content = Content.find(params[:id])
+    unless current_user.id == content.user_id
+      redirect_to content_path(content.id)
+    end
   end
 
 end

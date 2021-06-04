@@ -2,8 +2,9 @@
 <%= @user.nickname %>
 <%= @user.prefecture.name%>
 
-<%= link_to 'アカウント情報を編集する', edit_user_registration_path(@user.id) if current_user.id == @user.id %>
+<%= link_to 'アカウント情報を編集する', edit_user_registration_path(@user.id) if user_signed_in? && current_user.id == @user.id %>
 
+<%= "#{@user.nickname}の写真一覧" %>
 <% if @posts.present? %>
   <% @posts.each do |post| %>
     <% post.images.each do |image| %>

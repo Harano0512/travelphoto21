@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  
+  before_action :authenticate_user!, except: [:show]
+  before_action :check_user, only: [:new, :create, :edit, :destroy, :update]
+
   def show
     @post = Post.find(params[:id])
     @comments = Comment.where(post_id: @post.id).order("created_at DESC")
@@ -42,6 +44,13 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:subject, :travel_date, :prefecture_id, :article, images: [] ).merge(user_id: current_user.id, content_id: params[:content_id])
+  end
+
+  def check_user
+    content = Content.find(params[:content_id])
+    unless current_user.id == content.user_id
+      redirect_to content_post_path(post.content_id,post.id)
+    end
   end
 
 end

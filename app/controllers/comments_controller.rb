@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_user, only: [:destroy]
 
   def create
     post = Post.find(params[:post_id])
@@ -17,6 +19,13 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.permit(:text, :post_id).merge(user_id: current_user.id)
+  end
+
+  def check_user
+    comment = Comment.find(params[:id])
+    unless current_user.id == comment.user_id
+      redirect_to "/contents/#{post.content.id}/posts/#{post.id}"
+    end
   end
 
 end

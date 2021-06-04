@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_comment, only: [:check_user, :destroy,]
   before_action :check_user, only: [:destroy]
 
   def create
@@ -9,7 +10,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    comment = Comment.find(params[:id])
     post = Post.find("#{comment.post_id}")
     comment.destroy
     redirect_to "/contents/#{post.content.id}/posts/#{post.id}"
@@ -21,8 +21,11 @@ class CommentsController < ApplicationController
     params.permit(:text, :post_id).merge(user_id: current_user.id)
   end
 
-  def check_user
+  def set_comment
     comment = Comment.find(params[:id])
+  end
+
+  def check_user
     unless current_user.id == comment.user_id
       redirect_to "/contents/#{post.content.id}/posts/#{post.id}"
     end

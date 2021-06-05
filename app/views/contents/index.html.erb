@@ -31,25 +31,5 @@
           <%= image_tag @contents[0].posts[0].images[0].variant(resize: '300x203').processed, class:"image-tag" %>
         </div>
       </div>
-      <div class="article-list">
-        <div class="new-article">
-          <%= link_to @contents[1].title, content_path(@contents[1].id) %></br>
-          <%= @contents[1].from_date %> ~ <%= @contents[1].return_date %></br>
-          <%= link_to @contents[1].user.nickname, user_path(@contents[1].user_id)%></br>
-        </div>
-        <div class="new-article-photo">
-          <%= image_tag @contents[1].posts[0].images[0].variant(resize: '300x203').processed, class:"image-tag" %>
-        </div>
-      </div>
-      <div class="article-list">
-        <div class="new-article">
-          <%= link_to @contents[2].title, content_path(@contents[2].id) %></br>
-          <%= @contents[2].from_date %> ~ <%= @contents[2].return_date %></br>
-          <%= link_to @contents[2].user.nickname, user_path(@contents[2].user_id)%></br>
-        </div>
-        <div class="new-article-photo">
-          <%= image_tag @contents[2].posts[0].images[0].variant(resize: '300x203').processed, class:"image-tag" %>
-        </div>
-      </div>
   </div>
 </div>

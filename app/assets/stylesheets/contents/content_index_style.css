@@ -1,0 +1,205 @@
+body {
+  width: 100vw;
+  height: 180vh;
+  font-family: font-family: 'M PLUS 1p', sans-serif; 
+}
+
+body * li{
+  list-style: none;
+}
+
+body * a {
+  text-decoration: none;
+} 
+
+/* header */
+header {
+  width: 100vw;
+  height: 70px;
+  background-color: #ffffff;
+  background-size: cover;
+  border-bottom: solid 2px gainsboro;
+}
+
+.header-bar {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-tag {
+  float: left;
+}
+
+.header-right {
+  display: flex;
+}
+
+.header-user-container {
+  margin: 10px 20px;
+}
+
+.header-user {
+  float: right;
+  font-size: 25px;
+}
+
+.arrow {
+  float: right;
+}
+
+
+.sign-btn {
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  background-color: rgba(229, 171, 228, 0.729);
+  margin: 2px 10px;
+  float: right;
+  color: #ffffff;
+  border-radius: 15px;
+  font-size: 20px;
+  padding: 8px 0 2px;
+  text-align: center;
+  box-shadow: 3px 3px rgb(83, 83, 83);
+}
+
+.sign-btn:hover {
+  background-color: rgba(229, 171, 228, 1);
+}
+
+.sign-btn:active {
+  position: relative;
+  top: 3px;
+  right: 3px;
+  box-shadow: none;
+}
+
+
+/* index-menu-bar */
+.index-menu-bar {
+  width: 100vw;
+  height: 40px;
+  background-color: rgba(253, 224, 95, 0.6);
+}
+
+.index-menu {
+  padding: 9px;
+}
+
+.index-menu ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+.index-menu a{
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+.index-menu a:hover{
+  border-bottom: solid 3px #ffffff;
+}
+
+/* index-main */
+.index-main-wrapper {
+  background-image: url(4677820_m.jpg);
+  background-size: cover;
+  height: 600px;
+  width: 100vw;
+}
+
+.index-main-container {
+  width: 800px;
+  height: 300px;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.index-main-container h1 {
+  color: darkblue;
+  font-size: 80px;
+}
+
+.index-main-container h2 {
+  color: darkblue;
+  font-size: 30px;
+}
+
+.index-main-link {
+  display: inline-block;
+  font-size: 14px;
+  padding-top: 8px;
+  width: 250px;
+  height: 30px;
+  background-color: rgba(29, 173, 154, 0.7);
+  color: #ffffff;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 3px 3px rgb(83, 83, 83);
+}
+
+.index-main-link:hover {
+  background-color: rgba(29, 173, 154, 1);
+  cursor: pointer;
+}
+
+.index-main-link:active {
+  position: relative;
+  top: 3px;
+  right: 3px;
+  box-shadow: none;
+}
+
+/* index-bottom */
+
+.index-bottom-wrapper {
+  height: auto;
+  width: 100vw;
+  background-image: url(2560255.jpg);
+  background-size: cover;
+}
+
+.index-bottom {
+  width: 800px;
+  margin: 60px auto;
+  
+}
+
+#new-articles-list {
+  font-size: 30px;
+  color: black;
+  border-bottom:solid 1px black;
+}
+
+.article-list {
+  width: 90%;
+  height: 200px;
+  background-color: rgb(234, 234, 229, 0.85);
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*footer*/
+footer{
+  width: 100vw;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.629);
+
+}
+
+.footer-container {
+  padding: 15px;
+}
+
+.footer-container p{
+  color: white;
+  font-size: 16px;
+}

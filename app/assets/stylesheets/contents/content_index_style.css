@@ -179,7 +179,7 @@ header {
 .article-list {
   width: 90%;
   height: 200px;
-  background-color: rgb(234, 234, 229, 0.85);
+  background-color: rgba(234, 234, 229, 0.807);
   margin-top: 20px;
   padding: 20px;
   font-size: 20px;

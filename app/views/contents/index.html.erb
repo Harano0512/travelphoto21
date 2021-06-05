@@ -21,15 +21,17 @@
 <div class="index-bottom-wrapper">
   <div class="index-bottom">
     <h3 id="new-articles-list">最新記事</h3>
-      <div class="article-list">
-        <div class="new-article">
-          <%= link_to @contents[0].title, content_path(@contents[0].id) %></br>
-          <%= @contents[0].from_date %> ~ <%= @contents[0].return_date %></br>
-          <%= link_to @contents[0].user.nickname, user_path(@contents[0].user_id)%></br>
+      <% @contents.each do |content| %>
+        <div class="article-list">
+          <div class="new-article">
+            <%= link_to content.title, content_path(content.id) %></br>
+            <%= content.from_date %> ~ <%= content.return_date %></br>
+            <%= link_to content.user.nickname, user_path(content.user_id)%></br>
+          </div>
+          <div class="new-article-photo">
+            <%= image_tag content.posts[0].images[0].variant(resize: '300x203').processed, class:"image-tag" %>
+          </div>
         </div>
-        <div class="new-article-photo">
-          <%= image_tag @contents[0].posts[0].images[0].variant(resize: '300x203').processed, class:"image-tag" %>
-        </div>
-      </div>
+      <% end %>
   </div>
 </div>

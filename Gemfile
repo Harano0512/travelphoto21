@@ -59,3 +59,4 @@ gem 'pry-rails'
 gem 'rubocop', require: false
 gem 'active_hash'
 gem "aws-sdk-s3", require: false
+gem 'rack-cors'

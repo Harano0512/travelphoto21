@@ -13,4 +13,5 @@ class Post < ApplicationRecord
   belongs_to :content
   has_many_attached :images
   has_many :comments
+
 end

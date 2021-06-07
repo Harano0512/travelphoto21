@@ -1,13 +1,17 @@
-+<div>
-  <%= form_with(model: @content, local: true) do |f| %>
-    <%= f.label :title,"タイトル" %>
-    <%= f.text_field :title, autofocus: true, autocomplete: "title" %></br>
-    <%= f.label :from_date,"出発日"%>
-    <%= f.date_field :from_date %></br>
-    <%= f.label :return_date,"帰着日"%>
-    <%= f.date_field :return_date %></br>
-    <%= f.submit "変更" %>
-  <% end %>
+<div class="content_new-wrapper">
+  <div class="content_new-container">
+    <h2>旅の記録を編集する <i class="fas fa-edit"></i></h2>
+    <div class="content-form">
+      <%= form_with(model: @content, local: true) do |f| %>
+        <%= f.label :title,"タイトル" ,class:"content-title"%>
+        <%= f.text_field :title , class:"content-form-box"%></br>
+        <%= f.label :from_date,"出発日　"%>
+        <%= f.date_field :from_date, class:"content-form-box" %></br>
+        <%= f.label :return_date,"帰着日　"%>
+        <%= f.date_field :return_date, class:"content-form-box" %></br>
+        <%= f.submit "変更する" , class:"create-btn" %>
+        <%= link_to "戻る",content_path(@content.id) %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "戻る", content_path(@content.id) %>

@@ -1,6 +1,8 @@
 .content_new-wrapper {
   height: 600px;
   width: 100vw;
+  background-image: url(491412_l.jpg);
+  background-size: cover;
 }
 
 .content_new-container {
@@ -12,7 +14,7 @@
 
 .content_new-container h2 {
   font-size: 30px;
-  border-bottom: dashed 1px aquamarine;
+  border-bottom: dashed 3px aquamarine;
 }
 
 .content-form{
@@ -28,7 +30,7 @@
 .content-form-box {
   margin: 20px;
   border: none;
-  border-bottom:solid 1px hotpink;
+  border-bottom:solid 2px hotpink;
 }
 
 .create-btn {

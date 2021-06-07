@@ -1,35 +1,47 @@
-<%= @post.subject %>
-<%= @post.travel_date %>
-<%= @post.prefecture_id %>
-<%= @post.article %>
-<%= link_to @post.user.nickname, user_path(@post.user_id)%></br>
+<div class="posts_show-wrapper">
+  <div class="posts_show-container">
+    <div class="photos-container">
+      <% @post.images.each do |image| %>
+        <div class="photos">
+          <%= link_to image, "data-lightbox": image do %>
+            <%= image_tag image.variant(resize: '400x400') %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="text-container">
+      <h2 class="post-subject"><%= @post.subject %></h2>
+      <span><%= @post.travel_date %></span>
+      <soan><%= @post.prefecture.name %></span></br>
+      <div><%= link_to @post.user.nickname, user_path(@post.user_id)%> の投稿</div>
 
-<% @post.images.each do |image| %>
-  <%= link_to image, "data-lightbox": image do %>
-    <%= image_tag image.variant(resize: '400x400') %>
-  <% end %>
-<% end %>
+      <div class="posts-link">
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+          <span><%= link_to "編集", edit_content_post_path(@post.content_id, @post.id) %></span>
+          <span><%= link_to "削除", content_post_path(@post.id), method: :delete%></span>
+        <% end %>
+        <span><%= link_to "一覧へ", content_path(@post.content_id) %></span></br> 
+      </div>
+      <div class="post-article"><%= @post.article %></div>
+      <div class="comment-container">
+        <h3>コメントはこちらへ <i class="far fa-comment-dots"></i></h3>
+        <div>
+          <%= form_with(model: @comment, url: comments_path, local: true) do |f| %>
+          <%= f.text_field :text ,size:"24"%>
+          <%= f.hidden_field :post_id, :value => @post.id %>
+          <div class="comment-btn"><%= f.submit "コメントする" %></div>
+          <% end %>
+        </div>
 
-<% if user_signed_in? && current_user.id == @post.user_id %>
-  <%= link_to "編集", edit_content_post_path(@post.content_id, @post.id) %>
-  <%= link_to "削除", content_post_path(@post.id), method: :delete%>
-<% end %>
-<%= link_to "一覧へ", content_path(@post.content_id) %></br> 
-
-コメント
-<div>
-  <%= form_with(model: @comment, url: comments_path, local: true) do |f| %>
-   <%= f.text_field :text %>
-   <%= f.hidden_field :post_id, :value => @post.id %>
-   <%= f.submit "コメントする" %>
-  <% end %>
-</div>
-
-<% @comments.each do |comment| %>
-  <div>
-    <%= l comment.created_at %>
-    <%= comment.text %>
-    <%= link_to comment.user.nickname, user_path(comment.user_id)%>
-    <%= link_to "コメント削除", comment_path(comment.id), method: :delete if user_signed_in? && current_user.id == comment.user_id %>
+        <% @comments.each do |comment| %>
+          <div class="comments">
+            <%= l comment.created_at %>
+            <%= link_to "削除する", comment_path(comment.id), method: :delete if user_signed_in? && current_user.id == comment.user_id %></br>  
+            <%= link_to comment.user.nickname, user_path(comment.user_id)%></br>
+            <div class="comment"><%= comment.text %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>

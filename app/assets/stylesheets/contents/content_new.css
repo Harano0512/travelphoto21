@@ -1,0 +1,36 @@
+.content_new-wrapper {
+  height: 600px;
+  width: 100vw;
+}
+
+.content_new-container {
+  margin: 50px 300px ;
+  width: 50%;
+  height: 80%;
+}
+
+
+.content_new-container h2 {
+  font-size: 30px;
+  border-bottom: dashed 1px aquamarine;
+}
+
+.content-form{
+  height: 80%;
+  margin: 40px;
+}
+
+.content-form{
+  font-size: 20px;
+  color:rgb(46, 7, 69)
+}
+
+.content-form-box {
+  margin: 20px;
+  border: none;
+  border-bottom:solid 1px hotpink;
+}
+
+.create-btn {
+  margin: 30px 10px 30px 0;
+}

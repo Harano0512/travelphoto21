@@ -1,37 +1,39 @@
 <!-- index-main -->
-<div class="index-main-wrapper">
-  <div class="index-main-container">
-    <h1>Travel Photo21</h1>
-    <h2>旅の写真を公開しよう</h2>
-    <%= link_to "新しい旅を投稿する",new_content_path ,class:"index-main-link"%>
-  </div>  
-</div>
-<!-- 上部メニュー部分 -->
-<div class="index-menu-bar">
-  <div class="index-menu">
-    <ul>
-      <li><a href="#new-articles-list">最新記事</a></li>
-      <li><a href="#">記事一覧</a></li>
-      <li><a href="#">画像一覧</a></li>
-      <li><a href="#">都道府県別一覧</a></li>
-    </ul>
+<div class="index-wrapper">
+  <div class="index-main-wrapper">
+    <div class="index-main-container">
+      <h1>Travel Photo21</h1>
+      <h2>旅の写真を公開しよう</h2>
+      <%= link_to "新しい旅を投稿する",new_content_path ,class:"index-main-link"%>
+    </div>  
   </div>
-</div>
-<!-- index-bottom -->
-<div class="index-bottom-wrapper">
-  <div class="index-bottom">
-    <h3 id="new-articles-list">最新記事</h3>
-      <% @contents.each do |content| %>
-        <div class="article-list">
-          <div class="new-article">
-            <%= link_to content.title, content_path(content.id) %></br>
-            <%= content.from_date %> ~ <%= content.return_date %></br>
-            <%= link_to content.user.nickname, user_path(content.user_id)%></br>
+  <!-- 上部メニュー部分 -->
+  <div class="index-menu-bar">
+    <div class="index-menu">
+      <ul>
+        <li><a href="#new-articles-list">最新記事</a></li>
+        <li><a href="#">記事一覧</a></li>
+        <li><a href="#">画像一覧</a></li>
+        <li><a href="#">都道府県別一覧</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- index-bottom -->
+  <div class="index-bottom-wrapper">
+    <div class="index-bottom">
+      <h3 id="new-articles-list">最新記事</h3>
+        <% @contents.each do |content| %>
+          <div class="article-list">
+            <div class="new-article">
+              <%= link_to content.title, content_path(content.id) %></br>
+              <%= content.from_date %> ~ <%= content.return_date %></br>
+              <%= link_to content.user.nickname, user_path(content.user_id)%></br>
+            </div>
+            <div class="new-article-photo">
+              <%= image_tag content.posts[0].images[0].variant(resize: '300x203').processed, class:"image-tag" %>
+            </div>
           </div>
-          <div class="new-article-photo">
-          
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+    </div>
   </div>
 </div>

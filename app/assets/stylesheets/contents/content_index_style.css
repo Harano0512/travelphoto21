@@ -1,6 +1,6 @@
 body {
   width: 100vw;
-  height: 180vh;
+  height: 100vh;
   font-family: 'M PLUS 1p', sans-serif; 
 }
 
@@ -76,35 +76,11 @@ header {
 }
 
 
-/* index-menu-bar */
-.index-menu-bar {
-  width: 100vw;
-  height: 40px;
-  background-color: rgba(253, 224, 95, 0.6);
-}
-
-.index-menu {
-  padding: 9px;
-}
-
-.index-menu ul{
-  display: flex;
-  justify-content: space-around;
-}
-
-.index-menu a{
-  display: inline-block;
-  width: 120px;
-  text-align: center;
-  font-size: 16px;
-}
-
-
-.index-menu a:hover{
-  border-bottom: solid 3px #ffffff;
-}
-
 /* index-main */
+.index-wrapper{
+  height: 1700px;
+}
+
 .index-main-wrapper {
   background-image: url(4677820_m.jpg);
   background-size: cover;
@@ -155,10 +131,40 @@ header {
   box-shadow: none;
 }
 
+
+/* index-menu-bar */
+.index-menu-bar {
+  width: 100vw;
+  height: 40px;
+  background-color: rgba(253, 224, 95, 0.6);
+}
+
+.index-menu {
+  padding: 9px;
+}
+
+.index-menu ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+.index-menu a{
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+.index-menu a:hover{
+  border-bottom: solid 3px #ffffff;
+}
+
+
 /* index-bottom */
 
 .index-bottom-wrapper {
-  height: auto;
+  height: 920px;
   width: 100vw;
   background-image: url(2560255.jpg);
   background-size: cover;

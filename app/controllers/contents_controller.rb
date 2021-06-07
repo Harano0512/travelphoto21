@@ -5,6 +5,7 @@ class ContentsController < ApplicationController
 
   def index
    @contents = Content.order('created_at DESC').includes(:user)
+   
   end
 
   def new

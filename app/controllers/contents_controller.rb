@@ -41,6 +41,11 @@ class ContentsController < ApplicationController
     end
   end
 
+  def articles
+    @contents = Content.order('created_at DESC').page(params[:page]).per(5).includes(:user)
+    
+  end
+
   private
   def content_params
     params.require(:content).permit(:title, :from_date, :return_date).merge(user_id: current_user.id)

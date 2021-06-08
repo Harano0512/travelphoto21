@@ -10,11 +10,20 @@
   <!-- 上部メニュー部分 -->
   <div class="index-menu-bar">
     <div class="index-menu">
-      <ul>
+      <ul class="index-menu-lists">
         <li><a href="#new-articles-list">最新記事</a></li>
-        <%= link_to "記事一覧", articles_contents_path %>
-        <%= link_to "画像一覧", photos_contents_path %>
-        <li><a href="#">都道府県別一覧</a></li>
+        <li><%= link_to "記事一覧", articles_contents_path %></li>
+        <li><%= link_to "画像一覧", photos_contents_path %></li>
+        <li><%= link_to "都道府県別一覧", root_path, id:"index-prefecture" %></li>
+      </ul>
+      <ul class="show-lists none" id="pull-down">
+        <% @prefectures.each do |prefecture| %>
+          <% if prefecture.present? && prefecture.posts.length != 0  %>
+            <li><%= link_to "#{prefecture.name} (#{prefecture.posts.length})", prefecture_path(prefecture.id) %></li>
+          <% else %>
+            <li><%= prefecture.name %></li>
+          <% end %>
+        <% end %>
       </ul>
     </div>
   </div>

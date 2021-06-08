@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'prefectures/show'
   root to: 'contents#index'
   devise_for :users
   resources :contents do
@@ -10,5 +11,5 @@ Rails.application.routes.draw do
   end
   resources :comments, only: [:create, :destroy]
   resources :users, only: [:show]
-
+  resources :prefectures, only: [:show]
 end

@@ -1,17 +1,27 @@
-<h1> マイページ </h1>
-<%= @user.nickname %>
-<%= @user.prefecture.name%>
+<div class="user_show-wrapper">
+  <div class="user_show-container">
+    <h1><%= @user.nickname %> のマイページ </h1>
+    <div class="user_show-upcontainer">
+      <div>
+        <table border="2", class="user-table" >
+          <caption><i class="fas fa-user"></i>ユーザー情報</caption>
+          <tr><td class="user-column">ニックネーム</td><td><%= @user.nickname %></td></tr>
+          <tr><td class="user-column">居住地</td><td><%= @user.prefecture.name%></td></tr>
+        </table>
+        <%= link_to 'アカウント情報を編集する', edit_user_registration_path(@user.id) if user_signed_in? && current_user.id == @user.id %>
+      </div>
 
-<%= link_to 'アカウント情報を編集する', edit_user_registration_path(@user.id) if user_signed_in? && current_user.id == @user.id %>
-
-<%= "#{@user.nickname}の写真一覧" %>
-<% if @posts.present? %>
-  <% @posts.each do |post| %>
-    <% post.images.each do |image| %>
-      <%= image_tag image.variant(resize: '400x400') %>
-    <% end %>
-  <% end %>
-
-<% else %>
-  保存されている写真はありません
-<% end %>
+      <div class="user_show-table">
+        <table border="1">
+          <caption><i class="fas fa-camera"></i>アルバム一覧</caption>
+          <tr><th>日付</th><th>タイトル</th></tr>
+          <% @posts.each do |post| %>
+            <div>
+              <tr><td><%= link_to post.travel_date, content_post_path(post.content_id,post.id) %></td>
+              <td><%= post.subject %></td></tr>
+            </div>
+          <% end %>
+        </table>
+      <div>
+  </div>
+</div>

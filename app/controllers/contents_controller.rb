@@ -43,7 +43,10 @@ class ContentsController < ApplicationController
 
   def articles
     @contents = Content.order('created_at DESC').page(params[:page]).per(5).includes(:user)
-    
+  end
+
+  def photos
+    @posts = Post.order('created_at DESC').page(params[:page]).per(4)
   end
 
   private

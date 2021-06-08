@@ -1,0 +1,11 @@
+.photos-lists {
+  margin: 10px auto;
+  display: flex;
+  flex-flow: wrap;
+  overflow: auto;
+}
+
+.photo {
+  margin: 5px;
+
+}

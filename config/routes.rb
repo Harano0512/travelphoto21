@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :new, :create, :destroy, :edit, :update]
     collection do
       get 'articles'
+      get 'photos'
     end
   end
   resources :comments, only: [:create, :destroy]

@@ -1,7 +1,8 @@
 .article-wrapper {
   width: 100vw;
   height: 1700px;
-  overflow: auto;
+  background-image: url(2560255.jpg);
+  background-size: cover;
 }
 
 

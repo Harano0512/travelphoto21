@@ -1,0 +1,14 @@
+<div class="article-wrapper">
+  <div class="article-container">
+    <h3 id="new-articles-list">写真一覧</h3>
+    <%= paginate @posts %>
+    <div class="photos-lists">
+      <% @posts.each do |post| %>
+        <% post.images.each do |image| %>
+          <div class="photo"><%= link_to image_tag(image.variant(resize: '200x200').processed), content_post_path(post.content_id,post.id) %></div>
+        <% end %>  
+      <% end %>
+    </div>
+    <%= paginate @posts %>
+  </div>
+</div>

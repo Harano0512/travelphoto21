@@ -1,20 +1,27 @@
-<h3><%= @content.title %></h3>
-<%= @content.from_date %> ~ <%= @content.return_date %></br>
+<div class="content_show-wrapper">
+  <div class="content_show-container">
+    <h3 id="new-articles-list"><%= @content.title %></h3>
+      <p>旅行期間 <i class="far fa-calendar-alt"></i>　<%= @content.from_date %> ~ <%= @content.return_date %></p></br>
+      <div class="content_show-user">ユーザー：　<%= link_to @content.user.nickname, user_path(@content.user.id)%></div></br>
+      <table border="1">
+        <tr><th>日付</th><th>タイトル</th></tr>
+        <% @posts.each do |post| %>
+          <div>
+            <tr><td><%= link_to post.travel_date, content_post_path(post.content_id,post.id) %></td>
+            <td><%= post.subject %></td></tr>
+          </div>
+        <% end %>
+      </table>
 
-<% @posts.each do |post| %>
-  <div>
-    <%= link_to post.travel_date, content_post_path(post.content_id,post.id) %>
-    <%= post.subject %>
+        <% if user_signed_in? && current_user.id == @content.user_id %>
+          <%= link_to "新しいアルバムを追加", new_content_post_path(content_id: @content.id), class:"content_show-link" %>
+          
+          
+        
+          <%= link_to "編集する", edit_content_path(@content.id), class:"content_show-link" %>
+          <%= link_to "削除する", content_path(@content.id), method: :delete, class:"content_show-link" %>
+        <% end %>
+        <%= link_to "戻る",contents_path, class:"content_show-link" %>
+      </div>
   </div>
-<% end %>
-
-<% if user_signed_in? && current_user.id == @content.user_id %>
-  <%= link_to "新しいアルバムを作成する", new_content_post_path(content_id: @content.id) %>
-  <%= @content.user.nickname%></br>
-
-
-  <%= link_to "編集する", edit_content_path(@content.id) %>
-  <%= link_to "削除する", content_path(@content.id), method: :delete %>
-<% end %>
-
-<%= link_to "戻る",contents_path %>
+</div>

@@ -1,13 +1,33 @@
-<%= form_with(model: @post, url:content_post_path, local: true) do |f| %>
-  <%= f.label :subject, "タイトル" %>
-  <%= f.text_field :subject, autofocus: true, autocomplete: "subject" %>
-  <%= f.label :travel_date, "日付" %>
-  <%= f.date_field :travel_date, autocomplete: "travel_date" %>
-  <%= f.label :prefecture_id, "都道府県" %>
-  <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name) %>
-  <%= f.label :article, "テキスト" %>
-  <%= f.text_field :article, autocomplete: "article" %>
-  <%= f.label :image, "画像を選択" %>
-  <%= f.file_field :image %>
-  <%= f.submit "投稿する" %>
-<% end %>
+<div class="post_new-wrapper">
+  <div class="content_new-container">
+  <h2>アルバムを編集する <i class="far fa-images"></i></h2>
+    <div class="content-form">
+      <%= form_with(model: @post, url:content_posts_path, local: true) do |f| %>
+      <div class="post-form">
+        <%= f.label :subject, "タイトル　　" ,class:"post-title"%>
+        <%= f.text_field :subject, autofocus: true, autocomplete: "subject", class:"post-new-form" %></br>
+      </div>
+      <div class="post-form">
+        <%= f.label :travel_date, "日付　　　　" %>
+        <%= f.date_field :travel_date, autocomplete: "travel_date",class:"post-new-form" %></br>
+      </div>
+      <div class="post-form">
+        <%= f.label :prefecture_id, "都道府県　　" %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name) %></br>
+      </div>
+      <div class="post-form">
+        <%= f.label :article, "テキスト　　" ,class:"post-text-title"%>
+        <%= f.text_area :article, autocomplete: "article", row:"6", class:"post-text"%></br>
+      </div>
+      <div class="post-form">
+        <%= f.label :images, "画像を選択　" %><i class="far fa-images"></i>
+        <%= f.file_field :images, multiple: true %></br>
+      </div>
+      <div class="post-submit-form">
+        <%= f.submit "保存する" , class:"post-submit-btn"%>
+        <%= link_to "戻る",content_post_path(@post.content_id,@post.id) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

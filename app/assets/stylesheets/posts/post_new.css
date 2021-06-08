@@ -1,5 +1,5 @@
 .post_new-wrapper {
-  height: 600px;
+  height: 700px;
   width: 100vw;
   background-image: url(266966_m.jpg);
   background-size: cover;
@@ -24,7 +24,7 @@
 }
 
 .post-submit-form{
-  margin-top: 40px;
+  margin-top: 50px;
   margin-left: 100px;
 }
 
@@ -33,4 +33,6 @@
   width:300px;
   color: white;
   background-color: rgb(15, 15, 57);
+  border-radius: 5px;
+  margin-right: 50px;
 }

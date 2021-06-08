@@ -1,0 +1,36 @@
+.post_new-wrapper {
+  height: 600px;
+  width: 100vw;
+  background-image: url(266966_m.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+
+.post-text {
+  width: 400px;
+  height: 150px;
+}
+
+.post-form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: left;
+}
+
+.post-new-form{
+  border: none;
+  border-bottom:solid 2px hotpink;
+}
+
+.post-submit-form{
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+.post-submit-btn {
+  padding: 5px;
+  width:300px;
+  color: white;
+  background-color: rgb(15, 15, 57);
+}

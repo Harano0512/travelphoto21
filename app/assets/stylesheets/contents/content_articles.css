@@ -1,0 +1,11 @@
+.article-wrapper {
+  width: 100vw;
+  height: 1700px;
+  overflow: auto;
+}
+
+
+.article-container {
+  width: 70%;
+  margin: 100px auto;
+}

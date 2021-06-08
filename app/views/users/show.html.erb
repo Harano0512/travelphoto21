@@ -11,17 +11,21 @@
         <%= link_to 'アカウント情報を編集する', edit_user_registration_path(@user.id) if user_signed_in? && current_user.id == @user.id %>
       </div>
 
-      <div class="user_show-table">
-        <table border="1">
-          <caption><i class="fas fa-camera"></i>アルバム一覧</caption>
-          <tr><th>日付</th><th>タイトル</th></tr>
-          <% @posts.each do |post| %>
-            <div>
-              <tr><td><%= link_to post.travel_date, content_post_path(post.content_id,post.id) %></td>
-              <td><%= post.subject %></td></tr>
-            </div>
-          <% end %>
-        </table>
-      <div>
+      <% if @posts.present? %>
+        <div class="user_show-table">
+          <table border="1">
+            <caption><i class="fas fa-camera"></i>アルバム一覧</caption>
+            <tr><th>日付</th><th>タイトル</th></tr>
+            <% @posts.each do |post| %>
+              <div>
+                <tr><td><%= link_to post.travel_date, content_post_path(post.content_id,post.id) %></td>
+                <td><%= post.subject %></td></tr>
+              </div>
+            <% end %>
+          </table>
+        <div>
+      <% else %>
+        保存されている投稿はありません
+      <% end %>
   </div>
 </div>

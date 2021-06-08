@@ -1,0 +1,16 @@
+<div class="prefecture-wrapper">
+  <div class="content_show-container">
+    <h3 id="new-articles-list"><%= "#{@prefecture.name}のアルバム" %></h3>
+      <table border="1">
+        <tr><th>日付</th><th>タイトル</th></tr>
+        <% @posts.each do |post| %>
+          <div>
+            <tr><td><%= link_to post.travel_date, content_post_path(post.content_id,post.id) %></td>
+            <td><%= post.subject %></td></tr>
+          </div>
+        <% end %>
+        <%= paginate @posts %>
+      </table>
+    <%= link_to "戻る",root_path, class:"content_show-link" %>
+  </div>
+</div>

@@ -61,15 +61,36 @@
   width: 100vw;
   height: 40px;
   background-color: rgba(253, 224, 95, 0.6);
+  position: relative;
 }
 
 .index-menu {
   padding: 9px;
 }
 
-.index-menu ul{
+.index-menu-lists {
   display: flex;
   justify-content: space-around;
+}
+
+.show-lists {
+  width: 110px;
+  height: 300px;
+  position: absolute;
+  right: 130px;
+  top: 40px;
+  background-color: rgb(233, 233, 243);
+  text-align: center;
+  overflow: scroll;
+  border: solid 1px black;
+}
+
+.show-lists li {
+  font-size: 16px;
+}
+
+.none {
+  display: none;
 }
 
 .index-menu a{

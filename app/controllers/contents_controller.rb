@@ -1,11 +1,12 @@
 class ContentsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :articles, :photos]
+  before_action :authenticate_user!, except: [:index, :show, :articles, :photos, :prefectures]
   before_action :set_content, only: [:check_user, :show, :destroy, :edit, :update]
   before_action :check_user, only: [:edit, :destroy, :update]
 
   def index
    @contents = Content.order('created_at DESC').includes(:user)
    @contents = @contents.first(3)
+   @prefectures = Prefecture.where.not(id: 1)
   end
 
   def new
@@ -47,6 +48,10 @@ class ContentsController < ApplicationController
 
   def photos
     @posts = Post.order('created_at DESC').page(params[:page]).per(4)
+  end
+
+  def method_name
+    @posts = Post.order('created_at DESC')
   end
 
   private

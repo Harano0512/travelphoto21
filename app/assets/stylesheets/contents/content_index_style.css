@@ -74,15 +74,15 @@
 }
 
 .show-lists {
-  width: 110px;
+  width: 150px;
   height: 300px;
   position: absolute;
-  right: 130px;
-  top: 40px;
-  background-color: rgb(233, 233, 243);
+  right: 110px;
+  top: 35px;
+  background-color: rgba(234, 234, 229, 0.807);
   text-align: center;
   overflow: scroll;
-  border: solid 1px black;
+
 }
 
 .show-lists li {
@@ -98,6 +98,7 @@
   width: 120px;
   text-align: center;
   font-size: 16px;
+  text-decoration: none;
 }
 
 

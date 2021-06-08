@@ -1,0 +1,40 @@
+<style>
+#masthead,#main-footer{
+  display:none;
+}
+</style>
+
+.user_show-wrapper {
+  height: 700px;
+  width: 100vw;
+}
+
+.user_show-container {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.user_show-container h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+caption {
+  font-size: 16px;
+  color:mediumblue
+}
+
+.user-table {
+  width: 400px;
+}
+
+.user-column {
+  font-size: 16px;
+  color:rgb(69, 79, 90)
+}
+
+.user_show-table {
+  overflow: auto;
+  margin-bottom: 20px;
+}

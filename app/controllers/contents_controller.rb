@@ -50,8 +50,8 @@ class ContentsController < ApplicationController
     @posts = Post.order('created_at DESC').page(params[:page]).per(4)
   end
 
-  def method_name
-    @posts = Post.order('created_at DESC')
+  def search
+    @posts = Post.search(params[:keyword]).page(params[:page]).per(15)
   end
 
   private

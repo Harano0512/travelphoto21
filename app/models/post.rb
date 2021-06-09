@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   with_options presence: true do
+    validates :subject
     validates :travel_date
     validates :prefecture_id, numericality:{other_than: 1}
     validates :article
@@ -14,4 +15,11 @@ class Post < ApplicationRecord
   has_many_attached :images
   has_many :comments
 
+  def self.search(search)
+    if search != ""
+      Post.where('article LIKE(?) OR subject LIKE(?)', "%#{search}%","%#{search}%")
+    else
+      Post.order('travel_date DESC')
+    end
+  end
 end

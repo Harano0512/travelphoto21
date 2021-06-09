@@ -51,7 +51,7 @@ class ContentsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword]).page(params[:page]).per(15)
+    @posts = Post.order('travel_date DESC').search(params[:keyword]).page(params[:page]).per(15)
   end
 
   private

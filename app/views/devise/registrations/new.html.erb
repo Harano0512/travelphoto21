@@ -1,39 +1,44 @@
-<h2>Sign up</h2>
+<div class="user-wrapper">
+  <div class="user-container">
+    <u><i class="far fa-user"></i> 新規ユーザー登録</u>
+    <div class="user-form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field">
+          <%= f.label :"ニックネーム" %>
+          <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class:"input-field"%>
+        </div>
 
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+        <div class="field">
+          <%= f.label :"居住地を選択してください" %>
+          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name,{},{class:"input-field"}%>
+        </div>
+        
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"input-field" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em><i class="fas fa-exclamation-circle"></i><%= @minimum_password_length %> 文字以上が必要です
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password" ,class:"input-field"%>
+        </div>
+
+        <div class="field">
+          <%= f.label :"パスワードを再度入力ください" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"input-field" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "登録する" , class:"user-submit input-field"%>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :prefecture_id %><br />
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name) %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

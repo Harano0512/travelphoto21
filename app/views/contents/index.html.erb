@@ -35,7 +35,7 @@
           <div class="article-list">
             <div class="new-article">
               <%= link_to content.title, content_path(content.id) %></br>
-              <%= content.from_date %> ~ <%= content.return_date %></br>
+              <div class="article-form"><%= content.from_date %> ~ <%= content.return_date %></div></br>
               <%= link_to content.user.nickname, user_path(content.user_id)%></br>
             </div>
             <div class="new-article-photo">

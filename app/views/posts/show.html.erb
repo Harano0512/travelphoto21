@@ -24,6 +24,7 @@
       </div>
       <div class="post-article"><%= @post.article %></div>
       <div class="comment-container">
+      <% if user_signed_in? %>  
         <h3>コメントはこちらへ <i class="far fa-comment-dots"></i></h3>
         <div>
           <%= form_with(model: @comment, url: comments_path, local: true) do |f| %>
@@ -32,6 +33,9 @@
           <div class="comment-btn"><%= f.submit "コメントする" %></div>
           <% end %>
         </div>
+      <% else %>
+        <h3>** ログインしてください<i class="far fa-comment-dots"></i> **</h3></br>
+      <% end %>
 
         <% @comments.each do |comment| %>
           <div class="comments">

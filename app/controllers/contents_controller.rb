@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :articles, :photos, :prefectures]
+  before_action :authenticate_user!, except: [:index, :show, :articles, :photos, :prefectures, :search]
   before_action :set_content, only: [:check_user, :show, :destroy, :edit, :update]
   before_action :check_user, only: [:edit, :destroy, :update]
 

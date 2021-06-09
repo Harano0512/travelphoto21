@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'articles'
       get 'photos'
+      get 'search'
     end
   end
   resources :comments, only: [:create, :destroy]

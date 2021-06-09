@@ -80,7 +80,30 @@ header {
   box-shadow: none;
 }
 
+.header-center {
+  width: 500px;
+  height: 40px;
+  margin-top: 10px;
+}
 
+.search-input {
+  width: 80%;
+  height:40px;
+  background-color: rgb(235, 235, 251);
+  border-radius: 10px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  border:solid 1px gray;
+}
+
+.search-btn {
+  border-radius: 10px;
+  height: 40px;
+  width: 50px;
+  border:solid 1px gray;
+  background-color: rgba(29, 173, 154, 0.7);
+  color: #ffffff;
+}
 
 /*footer*/
 footer{

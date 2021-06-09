@@ -3,6 +3,12 @@
       <div class="header-left">
         <%= link_to image_tag("logo.png",size: '350x60'), "/", class:"image-tag" %>
       </div>
+      <div class="header-center">
+        <%= form_with(url: search_contents_path, local: true, method: :get, class: "search-form") do |f| %>
+        <%= f.text_field :keyword, placeholder: "　\uF002", class: "search-input" %>
+        <%= f.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
       <div class="header-right">
         <% if user_signed_in? %>
           <div class="header-user-container">

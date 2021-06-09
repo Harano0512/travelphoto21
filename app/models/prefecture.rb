@@ -54,4 +54,5 @@ class Prefecture < ActiveHash::Base
   has_many :users
   has_many :contents
   has_many :posts
+
 end

@@ -3,6 +3,7 @@
     <u><i class="far fa-user"></i> ユーザーログイン</u>
     <div class="user-form">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= alert %>
         <div class="field">
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-field" %>

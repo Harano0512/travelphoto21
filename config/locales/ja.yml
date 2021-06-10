@@ -8,6 +8,7 @@ ja:
       user:
         nickname: ニックネーム
         prefecture_id: 都道府県
-      tweet:
-        text: テキスト
-        image: 画像
+      content:
+        title: タイトル
+        from_date: 出発日
+        return_date: 帰着日

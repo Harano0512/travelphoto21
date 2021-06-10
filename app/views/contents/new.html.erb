@@ -3,6 +3,7 @@
     <h2>新しい旅の記録を作成 <i class="fa fa-book" aria-hidden="true"></i></h2>
     <div class="content-form">
       <%= form_with(model: @content, local: true) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
         <%= f.label :title,"タイトル" ,class:"content-title"%>
         <%= f.text_field :title ,placeholder:"例）沖縄満喫の旅", class:"content-form-box"%></br>
         <%= f.label :from_date,"出発日　"%>

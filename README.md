@@ -28,9 +28,7 @@ https://travelphoto21.herokuapp.com/
 
 # DEMO
 ## トップページ
-https://gyazo.com/1e8e6fb81d8a721cb6a130fc8ae2fa4a
-
-![Uploading d150ebc55f8a7d42e9334b8d7b7a908d.gif…]()
+![1e8e6fb81d8a721cb6a130fc8ae2fa4a](https://user-images.githubusercontent.com/78680327/121457342-810f7d80-c9e2-11eb-8c79-8c08a3eeca60.gif)
 
 -　中心のメニューバーで最新記事をクリックすることで、ページ下部の最新記事一覧にリンク
 
@@ -39,7 +37,8 @@ https://gyazo.com/1e8e6fb81d8a721cb6a130fc8ae2fa4a
 -　最新記事の写真は、投稿写真の１枚目を表示
 
 ## 投稿詳細ページ
-https://gyazo.com/265e7550f7b48bb90e7f8fa723c722ec
+![265e7550f7b48bb90e7f8fa723c722ec](https://user-images.githubusercontent.com/78680327/121457349-840a6e00-c9e2-11eb-83e1-b76ae674dd19.gif)
+
 
 -　旅行毎に作成した詳細ページを表示
 
@@ -50,7 +49,8 @@ https://gyazo.com/265e7550f7b48bb90e7f8fa723c722ec
 -　日付からアルバムへリンク
 
 ## ・投稿された内容を表示
-https://gyazo.com/0395c00c170ff2bfcbbac1894715829c
+![0395c00c170ff2bfcbbac1894715829c](https://user-images.githubusercontent.com/78680327/121457404-94bae400-c9e2-11eb-9557-d60d137e5794.gif)
+
 
 -　自分の投稿のみ、編集・削除ができる
 
@@ -58,14 +58,16 @@ https://gyazo.com/0395c00c170ff2bfcbbac1894715829c
 
 
 ## コメント欄
-https://gyazo.com/33bad2b55d2cab5e46e3b1158770a84a
+![33bad2b55d2cab5e46e3b1158770a84a](https://user-images.githubusercontent.com/78680327/121457388-91275d00-c9e2-11eb-91bf-fe3ccbef45ec.gif)
+
 
 -　ログインしている場合、コメントをすることができる
 
 -　自分のコメントのみ、削除ができる
 
 ## 記事一覧表示機能
-https://gyazo.com/7a70b0aa8fe2deca22e0cb97b2e4259c
+![7a70b0aa8fe2deca22e0cb97b2e4259c](https://user-images.githubusercontent.com/78680327/121457412-97b5d480-c9e2-11eb-8ecb-155c38f6e6ba.gif)
+
 
 -　トップページから記事一覧をクリックすると、一覧表示に移動
 
@@ -74,7 +76,8 @@ https://gyazo.com/7a70b0aa8fe2deca22e0cb97b2e4259c
 -　５件以上はネクストページへ
 
 ## 写真一覧表示機能
-https://gyazo.com/d150ebc55f8a7d42e9334b8d7b7a908d
+![d150ebc55f8a7d42e9334b8d7b7a908d](https://user-images.githubusercontent.com/78680327/121457594-dfd4f700-c9e2-11eb-8c9c-3eb4c4bac0d2.gif)
+
 
 -　トップページから写真一覧をクリックすると、一覧表示に移動
 
@@ -83,7 +86,8 @@ https://gyazo.com/d150ebc55f8a7d42e9334b8d7b7a908d
 -　写真をクリックすると記事ページへ移動
 
 ## 都道府県別一覧
-https://gyazo.com/c19e848574ae4ef445d2d4bd1c42bb3d
+![c19e848574ae4ef445d2d4bd1c42bb3d](https://user-images.githubusercontent.com/78680327/121457423-9e444c00-c9e2-11eb-8090-69f657d49ba3.gif)
+
 
 -　トップページから都道府県別一覧をクリックすると、リストが表示
 
@@ -92,7 +96,8 @@ https://gyazo.com/c19e848574ae4ef445d2d4bd1c42bb3d
 -　クリックすると、その都道府県のアルバム一覧が表示される
 
 ## ユーザーページ
-https://gyazo.com/7ccafa18cef29a842209557eab13720d
+![7ccafa18cef29a842209557eab13720d](https://user-images.githubusercontent.com/78680327/121457428-a0a6a600-c9e2-11eb-9410-b5b08db2da0f.gif)
+
 
 -　どのページでもユーザー名をクリックすると、そのユーザーのページへ移動
 
@@ -103,7 +108,8 @@ https://gyazo.com/7ccafa18cef29a842209557eab13720d
 -　日付からアルバムへリンク
 
 ## 検索機能
-https://gyazo.com/500b37e8e9f5c2aa5fc5646c37405d8e
+![500b37e8e9f5c2aa5fc5646c37405d8e](https://user-images.githubusercontent.com/78680327/121457436-a3090000-c9e2-11eb-9daf-ec1284e1e87f.gif)
+
 
 -　検索バーからキーワードを入力すると、該当のアルバムがリスト表示される
 

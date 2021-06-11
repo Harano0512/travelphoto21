@@ -3,6 +3,7 @@
     <h2>旅の記録を編集する <i class="fas fa-edit"></i></h2>
     <div class="content-form">
       <%= form_with(model: @content, local: true) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
         <%= f.label :title,"タイトル" ,class:"content-title"%>
         <%= f.text_field :title , class:"content-form-box"%></br>
         <%= f.label :from_date,"出発日　"%>

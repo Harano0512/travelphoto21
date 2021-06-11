@@ -48,6 +48,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -61,3 +62,6 @@ gem 'active_hash'
 gem "aws-sdk-s3", require: false
 gem 'rack-cors'
 gem 'kaminari'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'rails-i18n'

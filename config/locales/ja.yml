@@ -2,3 +2,20 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
+
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        prefecture_id: 都道府県
+      content:
+        title: タイトル
+        from_date: 出発日
+        return_date: 帰着日
+      post:
+        subject: タイトル
+        travel_date: 日付
+        prefecture_id: 都道府県
+        article: テキスト
+        images: 写真
+        

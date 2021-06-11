@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   with_options presence: true do
     validates :subject
     validates :travel_date
-    validates :prefecture_id, numericality:{other_than: 1}
+    validates :prefecture_id, numericality:{other_than: 1,message: 'を選択してください'}
     validates :article
     validates :images
   end

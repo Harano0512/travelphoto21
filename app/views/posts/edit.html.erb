@@ -3,6 +3,7 @@
   <h2>アルバムを編集する <i class="far fa-images"></i></h2>
     <div class="content-form">
       <%= form_with(model: @post, url:content_post_path, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
       <div class="post-form">
         <%= f.label :subject, "タイトル　　" ,class:"post-title"%>
         <%= f.text_field :subject, autofocus: true, autocomplete: "subject", class:"post-new-form" %></br>

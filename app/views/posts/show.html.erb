@@ -18,7 +18,7 @@
       <div class="posts-link">
         <% if user_signed_in? && current_user.id == @post.user_id %>
           <span><%= link_to "編集", edit_content_post_path(@post.content_id, @post.id) %></span>
-          <span><%= link_to "削除", content_post_path(@post.id), method: :delete%></span>
+          <span><%= link_to "削除", content_post_path(@post.content_id, @post.id), method: :delete%></span>
         <% end %>
         <span><%= link_to "一覧へ", content_path(@post.content_id) %></span></br> 
       </div>
@@ -28,6 +28,7 @@
         <h3>コメントはこちらへ <i class="far fa-comment-dots"></i></h3>
         <div>
           <%= form_with(model: @comment, url: comments_path, local: true) do |f| %>
+          <%= alert %>
           <%= f.text_field :text ,size:"24"%>
           <%= f.hidden_field :post_id, :value => @post.id %>
           <div class="comment-btn"><%= f.submit "コメントする" %></div>

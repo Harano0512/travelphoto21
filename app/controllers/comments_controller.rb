@@ -4,8 +4,15 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    comment = Comment.create(comment_params)
-    redirect_to "/contents/#{post.content.id}/posts/#{post.id}"
+    comment = Comment.new(comment_params)
+
+    if comment.save
+      redirect_to "/contents/#{post.content.id}/posts/#{post.id}"
+    else
+      @post = Post.find(params[:post_id])
+      @comments = Comment.where(post_id: @post.id).order("created_at DESC").includes(:user)
+      render template: "posts/show"
+    end
   end
 
   def destroy

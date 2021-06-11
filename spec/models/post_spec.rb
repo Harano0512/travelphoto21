@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :post do
-  describe 'content新規登録' do
+  describe 'アルバム新規登録' do
     before do
       user = FactoryBot.create(:user)
       content = FactoryBot.create(:content, user_id: user.id)
